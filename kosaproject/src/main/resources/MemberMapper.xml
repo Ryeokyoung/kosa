@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- xml파일이라 앞에 패키지 이름 일단 신경쓰지말자 -->
+<mapper namespace="com.my.mybatis.MemberMapper">
+
+  <insert id="insert" parameterType="Member">
+  	INSERT INTO MEMBER(mem_no, mem_id, mem_name, mem_pwd, mem_birth,
+						mem_phone, mem_sex, mem_nick, mem_power,
+							mem_state)
+	VALUES (member_seq.nextVal, #{memId}, #{memName}, #{memPwd}, #{memBirth},
+				#{memPhone}, #{memSex}, #{memNick}, #{memPower}, 1)
+  </insert>
+  
+  <select id="selectById" resultType="Member" parameterType="string">
+  	SELECT *
+	FROM MEMBER
+	WHERE mem_ID = #{memId}
+  </select>
+  
+  <update id="modify" parameterType="Member">
+ 	UPDATE MEMBER SET mem_id = #{memId},
+	mem_name = #{memName} ,
+	mem_pwd = #{memPwd} ,
+	mem_birth = #{memBirth} ,
+	mem_phone = #{memPhone} ,
+	mem_sex = #{memSex} ,
+	mem_nick = #{memNick},
+	mem_power = #{memPower},
+	mem_state = '1'
+	WHERE mem_ID = #{memId}
+  </update>
+  
+  <update id="delete" parameterType="string">
+  	UPDATE MEMBER SET mem_state = 0 WHERE mem_ID = #{id}
+  </update>
+  
+
+  <select id="selectCount" resultType="int" >
+		select count(*) from member
+	</select>
+  <select id="selectAll" resultType="Member" parameterType="int"> 
+		SELECT *
+		FROM (SELECT rownum rn, a.*
+		FROM (SELECT * FROM member ORDER BY mem_no )a )
+		WHERE rn BETWEEN #{startRow} AND #{endRow}
+  </select>
+  
+
+  <select id="findId" resultType="Member" parameterType="Member">
+  	SELECT *
+  	FROM MEMBER
+  	WHERE mem_name = #{memName} AND mem_phone = #{memPhone}
+  </select>
+
+  
+  <select id="findPwd" resultType="Member" parameterType="Member">
+  	SELECT *
+  	FROM MEMBER
+  	WHERE mem_id = #{memId} AND mem_phone = #{memPhone}
+  </select>
+  
+   <select id="selectByNo" resultType="Member" parameterType="int">
+  	SELECT *
+	FROM MEMBER
+	WHERE mem_No = #{memNo}
+  </select>
+  <select id="selectByPowerState" resultType="Member" parameterType="map">
+		SELECT *
+		FROM (SELECT rownum rn, a.*
+				FROM (SELECT *
+						FROM member
+						<where>
+						<if test="memPower != -1"><!-- 권한가 선택이 아닌경우  : 관리자, 사용자, 사업자 선택인 경우 -->
+						mem_power = #{memPower}
+						</if>
+						<if test="memState != -1"> <!-- 상태가 선택이 아닌경우  : 일반, 탈퇴선택인 경우 -->
+						AND
+						mem_state = #{memState}
+						</if>
+						</where>
+						ORDER BY mem_no )a )
+		WHERE rn BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<select id="selectCountByPowerState" resultType="int">
+      SELECT count(*)
+      FROM (SELECT rownum rn, a.*
+      FROM (SELECT *
+      FROM member
+      <where>
+         <if test="memPower != -1"><!-- 권한가 선택이 아닌경우 : 관리자, 사용자, 사업자 선택인 경우 -->
+            mem_power = #{memPower}
+         </if>
+         <if test="memState != -1"> <!-- 상태가 선택이 아닌경우 : 일반, 탈퇴선택인 경우 -->
+            AND
+            mem_state = #{memState}
+         </if>
+      </where>
+      ORDER BY mem_no )a )
+
+   </select>
+  
+</mapper>

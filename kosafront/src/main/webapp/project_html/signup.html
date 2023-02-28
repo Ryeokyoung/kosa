@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>로그인</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../project_css/signup.css">
+    <link rel="stylesheet" href="../project_css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../project_js/basic.js"></script>
+    <script src="../project_js/signup.js"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+        integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('4ff31a025c898e6e91666804627cc90a');
+    </script>
+</head>
+
+<body>
+    <div class="center">
+        <header>
+            <span class='menu' onclick="openNav()">&#9776; </span>
+            <img src="../project_image/잇잇.png">
+            <span class='title'>Eat it</span>
+        </header>
+        <aside>
+            <div class="title">회원가입</div>
+            <div class="content">
+
+                <input type="radio" name="memPower" value="1" checked>일반&nbsp;회원&nbsp;&nbsp;
+                <input type="radio" name="memPower" value="2">사업자<br>
+
+                <label for="id">아이디</label>
+                <input class="idinput" type="text" placeholder="아이디 입력하세요" name="memId" id="id">
+
+                <button class="iddupchk" type="button">중복확인</button><br>
+
+                <label for="pwd">비밀번호</label>
+                <input class="pwd1" type="password" placeholder="비밀번호 입력하세요" name="memPwd" id="pwd"> <br>
+
+                <label for="pwd">비밀번호확인</label>
+                <input class="pwd2" type="password" placeholder="비밀번호 동일하게 입력해주세요" id="pwd2"> <br>
+
+                <label for="name">이름</label>
+                <input class="nameinput" type="text" name="memName" placeholder="이름 입력하세요" id="name"> <br>
+
+                <label for="phone">전화번호</label>
+                <input class="phoneinput" name="memPhone" id="phone" placeholder="전화번호 입력하세요"> <br>
+
+                <!-- 성별 -->
+                <input type="radio" name="memSex" value="m" checked>남&nbsp;&nbsp;
+                <input type="radio" name="memSex" value="f">여<br>
+
+                <label for="nickname">닉네임</label>
+                <input class="nickinput" type="text" name="memNick" id="nname" placeholder="닉네임 입력하세요"> <br>
+
+                <label for="Bd">생일</label>
+                <input class="bdinput" type="date" name="memBirth"><br>
+                <form class="signup">
+
+                    프로필 사진 <input class="imginput" type="file" class="real-upload" accept="image/*" name="img">
+                </form>
+
+
+                <img class="img">
+                <br>
+                <input class="csbt" type="reset" value="취소">
+                <input class="rgbt" type="submit" value="가입" name="submit">
+
+
+
+
+                </form>
+            </div>
+        </aside>
+        <foot>
+            <div class="fcontent">
+                <div>(주)회사 : 한국 소프트웨어 산업협회</div>
+                <div>과정 : SW기업 채용 연계형 JAVA 개발자 양성과정</div>
+                <div>3조 : 이남규 ,  김혁준 ,김상겸 , 김려경 , 장나영</div>                
+            </div>
+        </foot>
+    </div>
+    <section class="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <span class="nickname"></span>
+        <a href="main.html">홈</a>
+        <a href="login.html" class="login">로그인</a>
+        <a href="signup.html" class="signup">회원가입</a>
+        <a href="#" class="logout">로그아웃</a>
+        <a href="mypage.html" class="mypage">내정보</a>
+        <a href="store_regist.html" class="store">가게등록신청</a>
+        <a href="store_submit_list.html" class="storeList">가게 신청 목록</a>
+        <a href="member_list.html" class="memberlist">회원목록</a>
+        <a href="category.html">카테고리</a>
+        <a href="notice.html">공지사항</a>
+        <a href="faq.html">자주묻는질문</a>
+    </section>
+</body>
+
+</html>

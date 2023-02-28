@@ -1,0 +1,77 @@
+<!-- Latest compiled and minified CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+<!-- jQuery library -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<!-- Latest compiled JavaScript -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+//jquery library 추가
+
+
+
+<script type="text/javascript">
+
+	$(function() {
+
+		var maxAppend = 1; //버튼누른 횟수 저장
+
+			$('#add').click(function(){
+
+					if (maxAppend >= 5) return; // 5번째부터는 append 안되고 return 시키기
+
+					$('div').append('<input type="file">');
+
+					maxAppend++;
+
+			});
+
+			
+
+			$('#remove').click(function() {
+
+				$('input:last-child').remove(); 
+
+//.remove 하면 모든 input이 삭제되어 버리기 때문에 따로 input에 class나 id를 안줬으면 last-child로 마지막 것 부터 하나씩 잡아 지워나간다.
+
+			})
+
+	});
+
+	
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<!-- 최대 5개까지만 -->
+
+	<div>
+
+		<input type="file">
+
+	
+
+	</div>
+
+	<h1>최대 5개까지 추가 가능</h1>
+
+	<button id="add">ADD</button>
+
+	<button id="remove">REMOVE</button>
+
+</body>

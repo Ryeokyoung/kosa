@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>프로젝트</title>
+    	<meta charset="utf-8">
+    	<link rel="stylesheet" href="../project_css/mystore_list.css">
+        <link rel="stylesheet" href="../project_css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../project_js/basic.js"></script>
+        <script src="../project_js/mystore_list.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="center">
+            <header>
+                <span class='menu' onclick="openNav()">&#9776; </span>
+                <img src="../project_image/잇잇.png">
+                <span class='title'>Eat it</span>
+            </header>
+            
+            <aside>
+                <div class="title" style="font-size: 70px; color: #ed7812;">내가게 목록</div>
+                <div class="content">
+                    <table class="table">
+                        <thead bgcolor='gray'>
+                            <tr>
+                                <td width='10%'>번호</td>
+                                <td width="20%">가게명</td>
+                                <td width="30%">위치</td>
+                                <td width="10%">사업자등록번호</td>
+                                <td width="10%">등록상태</td>
+                            </tr>
+                        </thead>
+                        <div class="tb">
+                            <tbody class="store">
+                                <tr>
+                                    <td class="num">번호</td>
+                                    <td class="name">가게명</td>
+                                    <td class="loca">위치</td>
+                                    <td class="res_no">사업자등록번호</td>
+                                    <td class="ststatus">상태</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                    
+                    <div class="pages">
+                        <ul></ul>
+                    </div>
+                </div>
+            </aside>
+            <foot>
+                <div class="fcontent">
+                    <div>(주)회사 : 한국 소프트웨어 산업협회</div>
+                    <div>과정 : SW기업 채용 연계형 JAVA 개발자 양성과정</div>
+                    <div>3조 : 이남규 ,  김혁준 ,김상겸 , 김려경 , 장나영</div>                
+                </div>
+            </foot>
+        </div>
+        <section class="mySidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <span class="nickname"></span>
+            <a href="main.html">홈</a>
+            <a href="login.html" class="login">로그인</a>
+            <a href="signup.html" class="signup">회원가입</a>
+            <a href="#" class="logout">로그아웃</a>
+            <a href="mypage.html" class="mypage">내정보</a>
+            <a href="store_regist.html" class="store">가게등록신청</a>
+            <a href="store_submit_list.html" class="storeList">가게 신청 목록</a>
+            <a href="category.html">카테고리</a>
+            <a href="notice.html">공지사항</a>
+        </section>
+    </body>
+</html>

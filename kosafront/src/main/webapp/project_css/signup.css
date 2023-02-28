@@ -1,0 +1,250 @@
+html {
+    height: 800px;
+}
+
+a.store {
+    display: none;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-size: 30px;
+}
+
+div.center {
+    margin-left: 0;
+    height: 100%;
+}
+
+header {
+    height: 10%;
+    border-bottom: 2px solid gray;
+}
+
+header>span.menu {
+    font-size: 50px;
+    cursor: pointer;
+    margin: 0 3% 0 3%;
+}
+
+header>span.title {
+    font-size: 50px;
+    margin-left: 0;
+}
+
+.mySidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.mySidenav a:hover {
+    color: #f1f1f1;
+}
+
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+nav {
+    height: 10%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+
+aside {
+    height: 60%;
+}
+
+aside>.content {
+    border: 2px solid #ed7812;
+    border-radius: 50px;
+    padding: 2% 2% 7% 2%;
+    margin: 100px 37%;
+    width: 500px;
+}
+
+aside>.content>img {
+    width: 200px;
+    height: 200px;
+}
+
+
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid #ed7812;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    transition: border 0.5s ease-in-out;
+    
+}
+
+[type="radio"]:checked {
+    border: 0.4em solid #ed7812;
+}
+
+[type="radio"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted #ed7812;
+}
+
+[type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) #ed7812;
+    cursor: pointer;
+}
+
+.iddupchk{
+    border: none;
+    height: 35px;
+    width: 65px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: #ed7812;
+    position: relative;
+    bottom: 3px;
+    color: white;
+    
+}
+
+.idinput{
+    margin-top: 20px;
+    width: 71%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+}
+.pwd1{
+    margin-top: 20px;
+    width: 83%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+}
+.pwd2{
+    margin-top: 20px;
+    width: 75.7%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+}
+
+.nameinput{
+    margin-top: 20px;
+    width: 90.3%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+}
+.phoneinput{
+    margin-top: 20px;
+    width: 83%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+    margin-bottom: 20px;
+}
+
+.nickinput{
+    margin-top: 20px;
+    width: 86%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+    margin-bottom: 20px;
+}
+
+.bdinput{
+    margin-top: 20px;
+    
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #ed7812;
+    margin-bottom: 20px;
+}
+
+
+
+.imginput{
+    float:right;
+    position: relative;
+    bottom: 50px;
+    height: 30px;
+    background: #ed7812;
+    border-radius: 10px;
+    color: #fff;
+}
+
+input[type=file]::file-selector-button {
+    width: 100px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #ed7812;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.img{
+    border: 2px solid #ed7812;
+}
+
+.rgbt{
+    float: right;
+    border: none;
+    height: 35px;
+    width: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: #ed7812;
+    color:white;
+}
+
+
+.csbt{
+    margin-left: 10px;
+    float: right;
+    border: none;
+    height: 35px;
+    width: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: #ed7812;
+    color:white;
+}
+
+div.title{
+    margin-left: 38%!important;
+  
+    position: relative;
+    top: 90px;
+}

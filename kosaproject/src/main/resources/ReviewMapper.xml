@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- xml파일이라 앞에 패키지 이름 일단 신경쓰지말자 -->
+<mapper namespace="com.my.mybatis.ReviewMapper">
+
+	<insert id="insert" parameterType="Review">
+	<selectKey keyProperty="reviewNo" resultType="int" order="AFTER">
+		select review_seq.currval FROM dual
+	</selectKey>
+		INSERT INTO Review(review_no, review_star, review_des, review_date, mem_Id,review_state, st_Num, mem_nick)
+		VALUES (review_seq.nextVal,#{reviewStar},#{reviewDes},SYSDATE,#{memId},1,#{stNum}, #{memNick})
+	</insert>
+	<update id="update" parameterType="Review">
+		UPDATE review
+		SET review_des = #{reviewDes}
+		WHERE review_no=#{reviewNo} AND mem_id=#{memId}
+	</update>
+<update id="updateReviewState" parameterType="Review">
+UPDATE Review
+SET review_state =0
+WHERE  st_Num=#{stNum}
+</update>
+	
+<select id="selectBystNum" parameterType="map" resultType="Review">
+	select *
+	FROM (SELECT rownum rn, a.*
+		FROM (SELECT * FROM REVIEW WHERE ST_NUM = #{stNum} ORDER BY review_no DESC)a )
+	WHERE rn BETWEEN #{startRow} AND #{endRow}
+</select>
+
+<select id="selectCount" parameterType="int" resultType="int">
+	select count(*)
+	from review
+	where st_Num=#{stNum}
+</select>
+
+
+<select id="selectById" resultType="Review" parameterType="string">
+	SELECT *
+	FROM REVIEW
+	WHERE MEM_ID = #{memId}
+</select>
+
+<update id="delMem" parameterType="string">
+	UPDATE REVIEW SET REVIEW_STATE = 0 WHERE MEM_ID = #{id}
+</update>
+
+
+
+<select id="selectBystNumNew" parameterType="int" resultType="Review">
+select *
+from review
+where st_Num=#{stNum} AND REVIEW_STATE = 1
+order by review_date desc
+</select>
+
+<select id="selectBystNumStar" parameterType="int" resultType="Review">
+select *
+from review
+where st_Num=#{stNum} AND REVIEW_STATE = 1
+order by review_star desc
+</select>
+
+<!-- <update id="modify" parameterType="Review">
+ 	UPDATE Review SET mem_id = #{memId},
+	review_Des = #{reviewDes},
+	review_star = #{reviewStar},
+	review_state = '0'
+	WHERE mem_ID = #{memId}
+ </update> -->
+
+<delete id="delete" parameterType="int">
+delete 
+from review
+where review_No=#{reviewNo}
+</delete>
+
+<update id="modify" parameterType="Review">
+ 	UPDATE Review 
+ 	SET review_Des = #{reviewDes},
+	review_star = #{reviewStar}
+	where review_No = #{reviewNo}
+</update>
+
+</mapper>

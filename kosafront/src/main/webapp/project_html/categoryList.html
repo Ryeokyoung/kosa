@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>프로젝트</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../project_css/categoryList.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../project_js/basic.js"></script>
+        <script src="../project_js/categoryList.js"></script>
+        
+    </head>
+    <body>
+        <div class="center">
+            <header>
+                <span class='menu' onclick="openNav()">&#9776; </span>
+                <span class='title'>음식점</span>
+                <a href ="main.html">main</a>
+          
+        	  
+        		
+        		<div class="searchBox">
+				<label><input type="text" id="search" onkeyup="filter()"
+					placeholder="검색어를 입력" />
+				</label>
+
+				</div>
+        		
+        
+            </header>
+            <nav>
+                <div>
+                    검색결과 목록
+                </div>
+            </nav>
+            <aside>
+                   <div class="content">
+                        <div class="detail">
+                            <div class="img"><img src="image.PNG"> </div>
+                            <a href="음식점상세.html" class="store2">가나다</a>
+                        </div>
+                    </div>             
+            </aside>
+        </div>
+        <section class="mySidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <span class="nickname"> 00</span>
+            <a href="login.html" class="login">로그인</a>
+            <a href="signup.html" class="signup">회원가입</a>
+            <a href="#" class="logout">로그아웃</a>
+            <a href="mypage.html" class="mypage">내정보</a>
+            <a href="category.html">카테고리</a>
+            <a href="notice.html">공지사항</a>
+        </section>
+    </body>
+</html>

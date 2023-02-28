@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <settings>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+	<setting name="jdbcTypeForNull" value="NULL"/>
+  </settings>
+  
+<typeAliases>
+	<typeAlias type="com.my.vo.Member" alias="Member"/>
+	<typeAlias type="com.my.vo.Notice" alias="Notice"/>
+	<typeAlias type="com.my.vo.Store" alias="Store"/>
+	<typeAlias type="com.my.vo.Menu" alias="Menu"/>
+	<typeAlias type="com.my.vo.Review" alias="Review"/>
+	<typeAlias type="com.my.vo.Qna" alias="Qna"/>
+</typeAliases>
+
+<mappers>
+	<mapper resource="MemberMapper.xml" />
+	<mapper resource="NoticeMapper.xml" />
+	<mapper resource="StoreMapper.xml" />
+	<mapper resource="ReviewMapper.xml" />
+	<mapper resource="QnaMapper.xml" />
+
+</mappers>
+
+
+</configuration>

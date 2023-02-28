@@ -1,0 +1,125 @@
+html{
+    height: 800px;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+div.center{
+    margin-left: 0;
+    height: 100%;
+}
+header{
+    height: 10%;
+    border-bottom: 2px solid gray;
+}
+header>span.menu{
+    font-size: 50px;
+    cursor:pointer;
+    margin: 0 3% 0 3%;
+}
+header>span.title{
+    font-size: 50px;
+    margin-left: 0;
+}
+a.store{
+    display: none;
+}
+.mySidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.mySidenav a:hover {
+    color: #f1f1f1;
+}
+.mySidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.mySidenav span:hover {
+    color: #f1f1f1;
+}
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+nav{
+    height: 10%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+nav>div{
+    width: 80%;
+    display: inline-block;
+}
+aside{
+    height: 60%;
+    margin-top: 50px;
+}
+aside>.content{
+    border: 2px solid #ed7812;
+    border-radius:  10px;
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    margin-right: 200px;
+}
+aside>.content> div.detail{
+    width: 200px;
+    height: 150px;
+    
+    margin: 3% 6.6% 3% 5%;
+    display: inline-block;
+    text-align: center;
+}
+aside>.content> div.detail>div.img{
+    height: 80%;
+    
+    margin: 0;
+}
+aside>.content> div.detail>div.img>img{
+    width: 100%;
+    height: 100%;
+}
+div.title{
+    margin-left: 10% !important;
+}
+div.detail{
+    background-color: #ed7812;
+    color: white;
+    font-size: 25px;
+}
+
+.fcontent div{
+    margin-left: 10% !important;
+}
+

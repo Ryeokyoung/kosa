@@ -1,0 +1,146 @@
+html{
+    height: 800px;
+}
+a.store{
+    display: none;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+div.center{
+    margin-left: 0;
+    height: 100%;
+}
+header{
+    height: 10%;
+    border-bottom: 2px solid gray;
+}
+header>span.menu{
+    font-size: 50px;
+    cursor:pointer;
+    margin: 0 3% 0 3%;
+}
+header>span.title{
+    font-size: 50px;
+    margin-left: 0;
+}
+.mySidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.mySidenav a:hover {
+    color: #f1f1f1;
+}
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.mySidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.mySidenav span:hover {
+    color: #f1f1f1;
+}
+nav{
+    height: 10%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+nav input{
+    height: 100%;
+    width: 80%;
+    font-size: 50px;
+}
+aside{
+    height: 60%;
+}
+aside>.content{
+    border: 1px solid;
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+}
+
+aside>.content>.noti_content{
+    margin: 5% 5% 5% 5%;
+}
+foot{
+    height: 10%;
+}
+foot>.content{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+    text-align: right;
+}
+
+foot>div{
+    background-color: white !important;
+}
+input#title{
+    width: 31% !important;
+    margin-left: 32%;
+    border: 1px solid #ed7812;
+    border-radius: 10px;
+}
+
+textarea#noti{
+    margin-left: 20%;
+    width: 55.5% !important;
+    border: 1px solid #ed7812;
+    float: left;
+    height: 400px;
+    margin-top: -150px;
+    border-radius: 10px;
+}
+
+div.content{
+    border:1px solid white!important;
+    width: 50%;
+    height: 600px;
+    margin-left: 24%;
+    position: relative;
+}
+
+button.bt{
+    border: none;
+    height: 35px;
+    width: 50px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: #ed7812;
+    color:white;
+    position: relative;
+    bottom: 400px;
+    right: 350px;
+}
+foot>div.content{
+    border:1px solid white!important;
+
+}

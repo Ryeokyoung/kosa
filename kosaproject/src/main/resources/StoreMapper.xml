@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="com.my.mybatis.StoreMapper">
+
+<insert id="insert" parameterType="Store">
+	INSERT INTO ST(st_num, st_des, st_hits, st_date, st_name,st_score, st_loca,
+					 st_phone, cate_num, owner_id, st_res_no, st_review_cnt, st_status)
+				VALUES(ST_SEQ.nextVal,#{stDes},0,SYSDATE,#{stName},0,#{stLoca},
+				#{stPhone},#{cateNum},#{ownerId},#{stResNo},0,0)
+	<selectKey keyProperty="stNum" resultType="int" order="AFTER">
+	SELECT ST_SEQ.currval FROM dual
+	</selectKey>
+</insert>
+
+<insert id="insertfood" parameterType="Menu">
+	INSERT INTO menu(st_num, menu_name, menu_price)
+				VALUES(#{stNum},#{menuName},#{menuPrice})
+</insert>
+
+
+
+
+<select id="selectStoreCount" resultType="int" >
+	select count(*) from st
+</select>
+	
+<select id="selectAll" resultType="Store" parameterType="map">
+	SELECT *
+	FROM (SELECT rownum rn,cate_NUM as "cateNum" ,st_review_cnt as "stHits", st_des as "stDes", owner_id as ownerId, a.*
+	FROM (SELECT * FROM st		
+	     where 
+	     	(st_name like '%${search}%'
+	     	or st_loca like '%${search}%')
+	     	AND ST_STATUS = 1
+	       	ORDER BY st_num DESC)a )
+	WHERE rn BETWEEN #{startRow} AND #{endRow}
+</select>
+
+<select id="selectCount" resultType="int" parameterType="int">
+	SELECT COUNT(*)
+	FROM ST
+	<where>
+		<if test="status != -1">
+			ST_STATUS = #{status}
+		</if>
+	</where>
+</select>
+
+<!-- <select id="selectAll" resultType="Store" parameterType="map">
+	SELECT st_name, st_hits, cate_Num, st_loca
+	FROM st		
+</select> -->
+
+<select id="submitted" resultType="Store" parameterType="map">
+	SELECT *
+	FROM (SELECT rownum rn, a.*
+		  FROM ST a
+	<where>
+		<if test="status != -1">
+		  ST_STATUS = #{status}
+		</if>
+	</where>
+	order by st_num desc
+	)
+	WHERE rn BETWEEN #{startRow} AND #{endRow}
+</select>
+
+<select id="selectByNo" resultType="Store" parameterType="int">
+	SELECT *
+	FROM ST
+	WHERE ST_NUM = #{storeNum}
+</select>
+
+<select id="selectMenu" resultType="Menu" parameterType="int">
+	SELECT *
+	FROM MENU
+	WHERE ST_NUM = #{stNum}
+</select>
+
+<update id="confirmStore" parameterType="int">
+	UPDATE ST SET ST_STATUS = 1
+	WHERE ST_NUM = #{stNum} 
+</update>
+
+<select id="selectById" resultType="Store" parameterType="string">
+ 		SELECT * 
+	FROM ST 
+	WHERE owner_id = #{ownerId} 
+</select>
+
+	
+<select id="selectByCate" resultType="Store" parameterType="int">
+	SELECT st_num, st_name, st_hits, cate_Num, st_loca   
+	FROM st   
+	WHERE CATE_NUM=#{cateNum} AND st_status=1 
+</select>
+
+<update id="star" parameterType="map">
+	UPDATE ST SET ST_SCORE = ST_SCORE+#{star}, ST_REVIEW_CNT = ST_REVIEW_CNT +1 WHERE ST_NUM = #{stNum}
+</update>
+
+<select id="selectByCatePageBean" resultType="Store" parameterType="map">
+	SELECT rn, b.*
+	FROM  (SELECT rownum rn, store.*
+			FROM ST store
+			WHERE cate_NUM = #{cateNum} AND ST_STATUS = 1 ) b
+	WHERE rn BETWEEN #{startRow} AND #{endRow}
+</select>
+
+<select id="selectCountByCate" resultType="int">
+	SELECT count(*) 
+	FROM st 
+	WHERE cate_Num=#{cateNum} AND st_status = 1
+</select>
+
+
+<select id="selectStoreContent" resultType="Store" parameterType="map">
+	select st_num, st_des,  st_name, st_loca, st_phone, cate,  st_res_no
+	from st
+	where st_num = #{stNum}
+</select>
+
+<select id="selectStoreLoad" resultType="Store" parameterType="map">
+	SELECT s.st_num as "stNum", s.st_des as "stDes", s.st_name as "stName", s.st_loca as "stLoca",s.st_phone as "stPhone", s.cate_Num as "cateNum", s.st_res_no as "stResNo", m.menu_name as "stMenu.menuName" ,m.menu_price as "stMenu.menuPrice"   
+     	FROM st s
+    	FULL OUTER JOIN menu m
+       ON ( s.st_num = m.st_num)
+       where s.st_num = #{stNum}
+</select>
+
+<update id="viewCnt" parameterType="int">
+	UPDATE ST SET ST_HITS = ST_HITS +1 WHERE ST_NUM = #{stNum}
+</update>
+
+<update id="update" parameterType="Store">
+		update st set st_des=#{stDes} ,st_name= #{stName}, st_loca= #{stLoca}, st_phone=#{stPhone}, cate_Num=#{cateNum},st_res_no= #{stResNo},st_status=0
+		where st_num = #{stNum}
+</update>
+
+<update id="updatefood" parameterType="Menu">
+		update menu set menu_name=#{menuName}, menu_price=#{menuPrice}
+		where st_num=#{stNum} AND MENU_NAME = #{menuName}
+</update>
+
+<select id="mostView" resultType="Store">
+	SELECT *
+	FROM(SELECT rownum rn, st2.*
+	 	 FROM (SELECT st.*
+           	   FROM ST st
+           	   WHERE ST_STATUS = 1
+               ORDER BY ST_HITS DESC)st2)
+    WHERE rn BETWEEN 1 AND 3
+</select>
+
+<select id="currStore" resultType="Store">
+	SELECT *
+	FROM (SELECT rownum rn, st.*
+		  FROM ST st
+		  WHERE ST_STATUS = 1
+		  ORDER BY ST_DATE DESC)
+	WHERE rn BETWEEN 1 AND 3
+</select>
+
+<update id="delete" parameterType="int">
+		update st set st_status=2
+		where st_num = #{stNum}
+</update>
+
+</mapper>

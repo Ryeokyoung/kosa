@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>프로젝트</title>
+    	<meta charset="utf-8">
+    	<link rel="stylesheet" href="../project_css/mypage.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../project_js/basic.js"></script>
+        <script src="../project_js/mypage.js"></script>
+</head>
+
+<body>
+    <div class="center">
+        <header>
+            <span class='menu' onclick="openNav()">&#9776; </span>
+            <span class='title' ;>로그인</span>
+        </header>
+        <nav>
+            회원가입
+        </nav>
+        <aside>
+            <div class="content">
+                    <label for="id">아이디</label>
+                    <input type="text" class="memId" placeholder="아이디 입력하세요" name="memId" id="id" readonly><br>
+                    <label for="pwd">비밀번호</label>
+                    <input type="password" name="memPwd" id="pwd"> <br>
+                    <label for="pwd">비밀번호확인</label>
+                    <input type="password" id="pwd2"> <br>
+               
+                    <label for="name">이름</label>
+                    <input type="text" name="memName" id="name" readonly> <br>
+                    
+                    <label for="phone">전화번호</label>
+                    <input name="memPhone" id="phone"> <br>
+               
+                    <!-- 성별 -->
+                    <input type="radio" name="memSex" value="m" checked>남&nbsp;&nbsp;
+                    <input type="radio" name="memSex" value="f">여<br>
+                    
+                    <label for="nickname">닉네임:</label>
+                    <input type="text" name="memNick" id="nname" readonly> <br>
+                    
+                    <label for="Bd">생일:</label>
+                    <input type="date" name="memBirth" readonly><br>
+                    <form class="signup">
+                        프로필 사진 <input type="file" class="real-upload" accept="image/*" name="img">
+                    </form>
+                    <img class="img">
+                    <br>
+
+                    <input type="submit" value="수정" name="submit">
+                    <input type="reset" value="취소">
+                    <input type="button" class="myStore" value="내가게목록">
+                    
+                    <br><br>
+                    <input type="button" class="delete" value="회원탈퇴">
+            </div>
+        </aside>
+    </div>
+    <section class="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <span class="nickname"></span>
+        <a href="main.html">홈</a>
+        <a href="login.html" class="login">로그인</a>
+        <a href="signup.html" class="signup">회원가입</a>
+        <a href="#" class="logout">로그아웃</a>
+        <a href="mypage.html" class="mypage">내정보</a>
+        <a href="store_regist.html" class="store">가게등록신청</a>
+        <a href="category.html">카테고리</a>
+        <a href="notice.html">공지사항</a>
+    </section>
+</body>
+</html>
+
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- xml파일이라 앞에 패키지 이름 일단 신경쓰지말자 -->
+<mapper namespace="com.my.mybatis.NoticeMapper">
+	<insert id="insert" parameterType="Notice">
+		INSERT INTO NOTICE(noti_no, noti_des, noti_date, noti_id, noti_title)
+		VALUES (noti_seq.nextVal,#{notiDes},SYSDATE,#{notiId},#{notiTitle})
+	</insert>
+  
+	<select id="selectAll" resultType="Notice" parameterType="map">
+		SELECT *
+		FROM (SELECT rownum rn, a.*
+		FROM (SELECT * FROM notice ORDER BY noti_no DESC)a )
+		WHERE rn BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<select id="selectCount" resultType="int" >
+		select count(*) from notice
+	</select>
+	
+	<select id="slectByNo" resultType="Notice" parameterType="int">
+		SELECT *
+		FROM NOTICE
+		WHERE NOTI_NO = #{notiNo}
+	</select>
+	
+	<select id="findAll" resultType="int" parameterType="int">
+		SELECT NOTI_NO 
+		FROM NOTICE 
+		ORDER BY NOTI_NO DESC
+	</select>
+</mapper>

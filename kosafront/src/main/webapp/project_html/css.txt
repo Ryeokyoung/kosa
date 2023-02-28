@@ -1,0 +1,23 @@
+평균별점	https://www.w3schools.com/howto/howto_css_user_rating.asp
+
+별점 https://www.w3schools.com/howto/howto_css_star_rating.asp
+
+클래스 추가 https://www.w3schools.com/howto/howto_js_add_class.asp
+
+클래스 제거 https://www.w3schools.com/howto/howto_js_remove_class.asp
+
+현재위치 정보 https://www.w3schools.com/html/html5_geolocation.asp
+
+메뉴아이콘 만들기 https://www.w3schools.com/howto/howto_css_menu_icon.asp
+
+축소된 사이드바 https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp
+
+아이콘 있는 사이드바 https://www.w3schools.com/howto/howto_css_sidebar_icons.asp
+
+사이드바  https://www.w3schools.com/howto/howto_js_off-canvas.asp
+
+페이징 https://www.w3schools.com/howto/howto_css_pagination.asp
+
+dom 추가 https://meanbymin.tistory.com/78
+
+사진업로드및 미리보기 https://sinna94.tistory.com/entry/JavaScript-이미지-업로드-미리보기-만들기

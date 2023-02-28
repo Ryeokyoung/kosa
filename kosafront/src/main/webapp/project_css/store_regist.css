@@ -1,0 +1,284 @@
+html {
+    height: 800px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+div.center {
+    margin-left: 0;
+
+}
+
+header {
+    height: 10%;
+    
+}
+
+header>span.menu {
+    font-size: 50px;
+    cursor: pointer;
+    margin: 0 3% 0 3%;
+}
+
+header>span.title {
+    font-size: 50px;
+    margin-left: 0;
+}
+
+.mySidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.mySidenav a:hover {
+    color: #f1f1f1;
+}
+
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+nav {
+    height: 10%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+
+aside {
+    height: 70%;
+}
+
+div.content {
+    border: 2px solid  #ed7812;   
+    border-radius:  50px;
+    padding: 2% 2% 9% 2%;
+    margin: 100px 31% ;
+    width: 700px;
+    font-size: 30px;
+
+}
+div.content_change{
+    margin-top: 40px;
+    border: 1px solid  #ed7812; 
+    border-radius:  30px;
+    height: 250px;
+}
+
+
+
+
+select#ctnum{
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width: 120px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+input#name{
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width: 85%;
+    margin-bottom: 20px;
+    font-size: 30px;
+
+}
+input#loca{
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width: 84%;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+input#phone{
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width: 79%;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+input#resno{
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width: 79%;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+textarea#des{
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 300px;
+    
+    width: 84%;
+    font-size: 30px;
+}
+.letter{
+    position: relative;
+    bottom: 280px;
+}
+
+input[name=fd_name]{
+    margin-top: 40px;
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width: 270px;
+    margin-bottom: 20px;
+    margin-left: 280px;
+    font-size: 30px;
+}
+input[name=fd_price]{
+
+    border: 1px solid  #ed7812; 
+    border-radius:  10px;
+    height: 35px;
+    width :270px;
+    margin-left: 279px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+input[name=fImg]{
+
+    border: 1px solid  #ed7812; 
+    background: #ed7812;
+    color: white;
+    font-size: 15px;
+    border-radius:  10px;   
+    width :270px;
+    margin-left: 260px;
+    margin-bottom: 20px;
+    
+    
+}
+
+.nameletter{
+   position: relative;
+   left: 240px;
+}
+
+.foodletter{
+    position: relative;
+    left: 240px;
+ }
+
+ .imgletter{
+    position: relative;
+    left: 240px;
+ }
+
+ 
+
+input[type=file]::file-selector-button {
+    width: 100px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #ed7812;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    
+}
+
+.showImg{
+    width: 180px;
+    height: 160px;
+    border: 1px solid #ed7812;
+    position: relative;
+    left: 40px;
+    bottom: 180px;
+}
+
+.showImg img{ 
+    width: 100%;
+    height: 100%;
+}
+
+.btpart{
+    float: right;
+    position: relative;
+
+    right: 750px;
+    bottom: 200px;
+    
+}
+
+.btpart button{
+    border: 2px solid  white;  
+    background-color: #ed7812;
+    color: white;
+    height:30px;
+    margin-top: 11px;
+    border-radius:  10px;
+    width: 100px;
+    height: 40px;
+    font-size: 25px;
+   
+}
+
+.plus{
+    border: 1px solid  white; 
+    color: white;
+    background-color: #ed7812;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+}
+.mins{
+    border: 1px solid  white; 
+    color: white;
+    background-color: #ed7812;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+    
+}
+input.imginput{
+    margin-bottom: 20px;
+}
+
+.img{
+    width: 280px;
+    height: 200px;
+    border: 1px solid #ed7812;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+div.title{
+    margin-left: 32% !important;
+    position: relative;
+    top: 80px;
+}

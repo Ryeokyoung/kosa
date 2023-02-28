@@ -1,0 +1,138 @@
+html{
+    height: 800px;
+}
+a.store{
+    display: none;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+div.center{
+    margin-left: 0;
+    height: 100%;
+}
+header{
+    height: 10%;
+    border-bottom: 2px solid white;
+}
+header>span.menu{
+    font-size: 50px;
+    cursor:pointer;
+    margin: 0 3% 0 3%;
+}
+header>span.title{
+    font-size: 50px;
+    margin-left: 0;
+}
+.mySidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.mySidenav a:hover {
+    color: #f1f1f1;
+}
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.mySidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.mySidenav span:hover {
+    color: #f1f1f1;
+}
+nav{
+    height: 10%;
+}
+aside{
+    height: 60%;
+}
+aside>.content{
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    margin-top: 30px;
+    padding-bottom: 150px;
+}
+aside>.content>.table{
+    border-collapse: collapse;
+    
+    line-height: 1.5;
+    border: 2px solid #ed7812;
+    width: 100%; 
+}
+aside>.content>.table>thead{
+    border-right: 2px solid #ed7812;
+    border-left: 2px solid #ed7812;
+    background: #ed7812;
+    text-align: center;
+}
+aside>.content>.table>tbody>tr{
+    background-color: white;
+    text-align: center;
+}
+aside>.content>.table>tbody>tr>td>a{
+    text-decoration: none;
+}
+td{
+    border-bottom: 2px solid #ed7812;
+    font-size: 25px;
+    height: 40px;
+    color: white;
+    text-align: center;
+}
+td.num{
+    background: #f3dcc7;
+    text-align: center;
+    color: black;
+}
+td.name{
+    text-align: center;
+    color: black;
+}
+td.loca{
+    text-align: center;
+    color: black;
+}
+td.res_no{
+    text-align: center;
+    color: black;
+}
+td.ststatus{
+    text-align: center;
+    color: black;
+}
+div.title{
+    margin-top: 100px!important;
+    margin-left: 10% !important;
+}
+
+.fcontent div{
+    margin-left: 10% !important;
+}

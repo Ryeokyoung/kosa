@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.my.mybatis.QnaMapper">
+	  <insert id="insert" parameterType="Qna">
+		  INSERT INTO QNA(qna_no, qna_title, qna_content, qna_date, qna_id, qna_ans)
+		  VALUES (qna_seq.nextVal,#{qnaTitle},#{qnaContent},SYSDATE,#{qnaId},#{qnaAns})
+	  </insert>
+
+	  <select id="selectAll" resultType="Qna" parameterType="map">
+		SELECT * 
+		FROM (SELECT rownum rn, a.*
+		FROM (SELECT * FROM qna ORDER BY qna_no DESC)a )
+		WHERE rn BETWEEN #{startRow} AND #{endRow}
+	  </select>
+	  
+	  <select id="findAll" resultType="int" parameterType="int">
+		SELECT QNA_NO 
+		FROM QNA 
+		ORDER BY QNA_NO DESC
+	  </select>
+		
+	  <select id="selectCount" resultType="int" >
+		select count(*) from QNA
+	  </select>
+	  
+	
+	  <select id="selectByNo" resultType="Qna" parameterType="int">
+		SELECT *
+		FROM QNA
+		WHERE Qna_NO = #{qnaNo}
+		</select>
+	
+		<update id="update" parameterType="Qna">
+		UPDATE QNA
+		SET qna_Ans = #{qnaAns}
+		WHERE qna_no=#{qnaNo}
+		</update>
+		<select id="selectById" resultType="Qna" parameterType="string">
+	       SELECT * 
+	      FROM QNA 
+	      WHERE qna_id = #{qnaId} 
+	     </select>
+	
+  </mapper>

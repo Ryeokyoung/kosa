@@ -1,0 +1,170 @@
+html{
+    height: 800px;
+}
+a.store{
+    display: none;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+div.center{
+    margin-left: 0;
+    height: 100%;
+}
+header{
+    height: 10%;
+    border-bottom: 2px solid white;
+}
+header>span.menu{
+    font-size: 50px;
+    cursor:pointer;
+    margin: 0 3% 0 3%;
+}
+header>span.title{
+    font-size: 50px;
+    margin-left: 0;
+}
+.mySidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.mySidenav a:hover {
+    color: white;
+}
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.mySidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.mySidenav span:hover {
+    color: white;
+}
+nav{
+    height: 10%;
+}
+aside{
+    height: 60%;
+}
+aside>.content{    
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    margin-top: 30px;
+}
+aside>.content>.table{
+    border-collapse: collapse;
+    
+    line-height: 1.5;
+    border: 2px solid #ed7812;
+    width: 100%;    
+        
+    
+}
+aside>.content>.table>thead{
+  border-right: 2px solid #ed7812;
+  border-left: 2px solid #ed7812;
+  background: #ed7812;
+  text-align: center;
+}
+td{
+    border-bottom: 2px solid #ed7812;
+    font-size: 25px;
+    height: 40px;
+    color: white;
+}
+td.no{
+    background: #f3dcc7;
+    text-align: center;
+    color: black;
+}
+td.ti{
+    text-align: center;
+    color: black;
+}
+td.da{
+    text-align: center;
+    color: black;
+}
+
+ul>li{
+    list-style: none;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+div.pages ul{
+    padding-left: 0px;    
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+div.pages li{
+    display : inline-block;
+    text-decoration: underline;
+    padding: 30px;
+}
+div.pages li.none{
+    text-decoration: none;
+}
+div.pages li:hover{
+    background-color: #ed7812;
+}
+
+.write{
+    float: right;
+    border: 2px solid  white;  
+    background-color: #ed7812;
+    color: white;
+    height:40px;
+    width: 130px;
+    font-size: 25px;
+    border-radius:  10px;
+    position: relative;
+    top: 70px;
+}
+
+nav{
+    margin-bottom: 0px !important;
+}
+div.title{
+    margin: 0px !important;
+}
+
+.searchContent{
+    
+    width: 300px !important;
+    margin: 0px !important;
+}
+.fcontent div{
+    margin-left: 10% !important;
+}
+

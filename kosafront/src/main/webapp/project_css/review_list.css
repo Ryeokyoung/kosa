@@ -1,0 +1,153 @@
+html {
+    height: 800px;
+}
+
+a.store {
+    display: none;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+div.center {
+    margin-left: 0;
+    height: 100%;
+}
+
+header {
+    height: 10%;
+    border-bottom: 2px solid gray;
+}
+
+header>span.menu {
+    font-size: 50px;
+    cursor: pointer;
+    margin: 0 3% 0 3%;
+}
+
+header>span.title {
+    font-size: 50px;
+    margin-left: 0;
+}
+
+.mySidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.mySidenav a:hover {
+    color: #f1f1f1;
+}
+
+.mySidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.mySidenav>a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+nav {
+    height: 10%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+
+nav>div {
+    width: 80%;
+    display: inline-block;
+}
+
+aside {
+    height: 60%;
+}
+
+aside>.content {
+    border: 1px solid;
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    overflow: auto;
+}
+
+aside>div.content>div {
+    border: 1px solid;
+    width: 30%;
+    height: 20%;
+    margin: 3% 5% 3% 10%;
+    display: inline-block;
+    overflow: auto; 
+}
+
+aside>div.content>div>div {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+aside>div.content>div>div>a {
+    text-decoration: none;
+}
+
+
+        .A {
+            /*background-color: rebeccapurple;*/
+            height: 250px;
+            width: 100%;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .A > button {
+            width: 200px;
+            height: 50px;
+
+            background-color: transparent;
+            color: white;
+
+            border-radius: 50px;
+            border: 1px solid white;
+        }
+        .A > button:hover {
+            border: 2px solid white;
+        }
+        .mycomment {
+        color: gray;
+        }
+        .wrap {
+            width: 1500px;
+            margin: 20px auto 0px auto;
+        }
+
+       .content .card>img{
+        width: 70%;
+        height: 40%;
+       }
+
+       
